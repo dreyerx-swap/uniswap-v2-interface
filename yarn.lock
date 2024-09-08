@@ -1186,6 +1186,11 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
+"@dreyerxswap/default-token-list@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@dreyerxswap/default-token-list/-/default-token-list-1.0.0.tgz#bc97571bb8c61ae0466e341ca59d9f943222f2f6"
+  integrity sha512-WOWUskmTHB6cxvq2CxDlQ6z8Kc88bMuO9yRl4HVmGypXw1rU+wFwrJXOOqxK9ea2Gc3kSdbUAmyzafL/pRjGlg==
+
 "@emotion/cache@^10.0.27":
   version "10.0.29"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.29.tgz#87e7e64f412c060102d589fe7c6dc042e6f9d1e0"
@@ -2576,11 +2581,6 @@
     lodash "^4.17.15"
     semver "^7.3.2"
     tsutils "^3.17.1"
-
-"@uniswap/default-token-list@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@uniswap/default-token-list/-/default-token-list-1.3.1.tgz#e856aa8e7d4112fcb39229df3023af0da1727699"
-  integrity sha512-nLBSzWGxVlbKby6xtf3ph56NltMyHCk8ohFD97Wub7K0I66YyHKuhyV7NZq05unB8TEWWpYDcdghmgztSv6H8Q==
 
 "@uniswap/lib@1.1.1":
   version "1.1.1"
