@@ -9,6 +9,7 @@ COPY package.json yarn.lock dist ./
 
 # Install dependencies using Yarn
 RUN yarn install
+RUN yarn postinstall
 
 # Copy the rest of the application code into the container
 COPY . .
