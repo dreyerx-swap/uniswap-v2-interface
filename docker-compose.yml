@@ -1,0 +1,10 @@
+version: '3'
+services:
+  uniswap-interface:
+    build: .
+    ports:
+      - "3007:3000"
+    environment:
+      - NODE_ENV=development
+    stdin_open: true # Pastikan stdin tetap terbuka
+    tty: true        # Pastikan tty tetap aktif
