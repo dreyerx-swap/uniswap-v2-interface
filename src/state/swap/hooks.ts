@@ -18,7 +18,6 @@ import { SwapState } from './reducer'
 import useToggledVersion from '../../hooks/useToggledVersion'
 import { useUserSlippageTolerance } from '../user/hooks'
 import { computeSlippageAdjustedAmounts } from '../../utils/prices'
-import { DeploymentInfo } from '@im33357/uniswap-v2-sdk'
 
 export function useSwapState(): AppState['swap'] {
   return useSelector<AppState, AppState['swap']>(state => state.swap)
@@ -90,9 +89,9 @@ export function tryParseAmount(value?: string, currency?: Currency): CurrencyAmo
 }
 
 const BAD_RECIPIENT_ADDRESSES: string[] = [
-  DeploymentInfo[4].factory.proxyAddress, // v2 factory
+  "0xc4b04185018Bd2f036CbA7Bb86cB41F687998DcE", // v2 factory
   '0xf164fC0Ec4E93095b804a4795bBe1e041497b92a', // v2 router 01
-  DeploymentInfo[4].router.proxyAddress // v2 router 02
+  "0xB1a0EAf384C32Aae60df8EE9CAAD683105a06Ce1" // v2 router 02
 ]
 
 /**
@@ -200,8 +199,8 @@ export function useDerivedSwapInfo(): {
         ? slippageAdjustedAmountsV1[Field.INPUT]
         : null
       : slippageAdjustedAmounts
-      ? slippageAdjustedAmounts[Field.INPUT]
-      : null
+        ? slippageAdjustedAmounts[Field.INPUT]
+        : null
   ]
 
   if (balanceIn && amountIn && balanceIn.lessThan(amountIn)) {

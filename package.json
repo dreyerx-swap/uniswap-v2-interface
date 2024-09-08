@@ -90,7 +90,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "postinstall": "rm -rf ./node_modules/@im33357/uniswap-v2-sdk; cp -rf ./dist ./node_modules/@im33357/uniswap-v2-sdk",
     "integration-test": "start-server-and-test 'serve build -l 3000' http://localhost:3000 'cypress run'",
+
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
