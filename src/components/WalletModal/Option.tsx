@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ExternalLink } from '../../theme'
+import { transparentize } from 'polished'
 
 const InfoCard = styled.button<{ active?: boolean }>`
   background-color: ${({ theme, active }) => (active ? theme.bg3 : theme.bg2)};
@@ -12,7 +13,7 @@ const InfoCard = styled.button<{ active?: boolean }>`
   &:focus {
     box-shadow: 0 0 0 1px ${({ theme }) => theme.primary1};
   }
-  border-color: ${({ theme, active }) => (active ? 'transparent' : theme.bg3)};
+  border-color: ${({ theme, active }) => (active ? 'white' : theme.bg3)};
 `
 
 const OptionCard = styled(InfoCard as any)`
@@ -34,7 +35,7 @@ const OptionCardClickable = styled(OptionCard as any)<{ clickable?: boolean }>`
   margin-top: 0;
   &:hover {
     cursor: ${({ clickable }) => (clickable ? 'pointer' : '')};
-    border: ${({ clickable, theme }) => (clickable ? `1px solid ${theme.primary1}` : ``)};
+    border: ${({ clickable, theme }) => (clickable ? `1px solid ${transparentize(0.5, theme.border1)}` : ``)};
   }
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 `
