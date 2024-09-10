@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { darken } from 'polished'
+import { darken, transparentize } from 'polished'
 import { useTranslation } from 'react-i18next'
 import { NavLink, Link as HistoryLink } from 'react-router-dom'
 
@@ -13,6 +13,7 @@ const Tabs = styled.div`
   align-items: center;
   border-radius: 3rem;
   justify-content: space-evenly;
+  border: 1px solid ${({ theme }) => transparentize(0.9, theme.border1)};
 `
 
 const activeClassName = 'ACTIVE'
