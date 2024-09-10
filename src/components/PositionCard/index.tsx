@@ -1,4 +1,4 @@
-import { JSBI, Pair, Percent } from '@im33357/uniswap-v2-sdk'
+import { JSBI, Pair, Percent } from '@dreyerxswap/v2-sdk'
 import { transparentize } from 'polished'
 import React, { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'

@@ -4,8 +4,9 @@
   "repository": "https://github.com/33357/uniswap-v2-interface.git",
   "private": true,
   "devDependencies": {
+    "@dreyerxswap/default-token-list": "1.0.0",
+    "@dreyerxswap/v2-sdk": "1.0.0",
     "@ethersproject/experimental": "^5.0.1",
-    "@im33357/uniswap-v2-sdk": "3.0.7",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",
@@ -26,7 +27,6 @@
     "@types/testing-library__cypress": "^5.0.5",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
-    "@dreyerxswap/default-token-list": "1.0.0",
     "@uniswap/token-lists": "^1.0.0-beta.16",
     "@uniswap/v2-core": "1.0.0",
     "@uniswap/v2-periphery": "^1.1.0-beta.0",
@@ -47,6 +47,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.0",
     "ethers": "^5.0.7",
+    "gh-pages": "^3.2.3",
     "i18next": "^15.0.9",
     "i18next-browser-languagedetector": "^3.0.1",
     "i18next-xhr-backend": "^2.0.1",
@@ -77,8 +78,7 @@
     "serve": "^11.3.0",
     "start-server-and-test": "^1.11.0",
     "styled-components": "^4.2.0",
-    "typescript": "^3.8.3",
-    "gh-pages": "^3.2.3"
+    "typescript": "^3.8.3"
   },
   "resolutions": {
     "@walletconnect/web3-provider": "1.1.1-alpha.0"
@@ -89,9 +89,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "postinstall": "rm -rf ./node_modules/@im33357/uniswap-v2-sdk; cp -rf ./dist ./node_modules/@im33357/uniswap-v2-sdk",
     "integration-test": "start-server-and-test 'serve build -l 3000' http://localhost:3000 'cypress run'",
-
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -109,5 +107,8 @@
       "last 1 safari version"
     ]
   },
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@babel/helper-function-name": "^7.24.7"
+  }
 }
