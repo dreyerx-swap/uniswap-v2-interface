@@ -1,5 +1,5 @@
 import { JSBI, Pair, Percent } from '@im33357/uniswap-v2-sdk'
-import { darken } from 'polished'
+import { transparentize } from 'polished'
 import React, { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { Link } from 'react-router-dom'
@@ -27,8 +27,9 @@ export const FixedHeightRow = styled(RowBetween)`
 
 export const HoverCard = styled(Card)`
   border: 1px solid ${({ theme }) => theme.bg2};
+  transition: border 200ms linear;
   :hover {
-    border: 1px solid ${({ theme }) => darken(0.06, theme.bg2)};
+    border: 1px solid ${({ theme }) => transparentize(0.9, theme.border1)};
   }
 `
 
