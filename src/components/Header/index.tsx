@@ -5,8 +5,8 @@ import { Text } from 'rebass'
 
 import styled from 'styled-components'
 
-import Logo from '../../assets/svg/logo.svg'
-import LogoDark from '../../assets/svg/logo_white.svg'
+import Logo from '../../assets/svg/drx_logo_white.svg'
+import LogoDark from '../../assets/svg/drx_logo_white.svg'
 import Wordmark from '../../assets/svg/drx_wordmark_black.svg'
 import WordmarkDark from '../../assets/svg/drx_wordmark_white.svg'
 import { useActiveWeb3React } from '../../hooks'
@@ -164,7 +164,7 @@ export default function Header() {
             </AccountElement>
           </HeaderElement>
           <HeaderElementWrap>
-            <VersionSwitch />
+            {/* <VersionSwitch /> */}
             <Settings />
             <Menu />
           </HeaderElementWrap>
