@@ -124,7 +124,7 @@ export default function AddLiquidity({
   async function onAdd() {
     if (!chainId || !library || !account) return
     const router = getRouterContract(chainId, library, account)
-    console.log(`Router ${router}`)
+
     const { [Field.CURRENCY_A]: parsedAmountA, [Field.CURRENCY_B]: parsedAmountB } = parsedAmounts
     if (!parsedAmountA || !parsedAmountB || !currencyA || !currencyB) {
       return
@@ -134,11 +134,9 @@ export default function AddLiquidity({
       [Field.CURRENCY_A]: calculateSlippageAmount(parsedAmountA, noLiquidity ? 0 : allowedSlippage)[0],
       [Field.CURRENCY_B]: calculateSlippageAmount(parsedAmountB, noLiquidity ? 0 : allowedSlippage)[0]
     }
-    console.log(`Amounts Min: ${amountsMin}`)
-
+    
     const deadlineFromNow = Math.ceil(Date.now() / 1000) + deadline
 
-    console.log(`Deadline from now: ${deadlineFromNow}`)
     let estimate,
       method: (...args: any) => Promise<TransactionResponse>,
       args: Array<string | string[] | number>,
@@ -171,15 +169,7 @@ export default function AddLiquidity({
       ]
       value = null
     }
-    console.log(`Value: ${value}`)
-    await estimate(...args, value ? { value } : {})
-    .then(estimatedgasLimit => {
-      console.log(`Estimated gas limit: ${estimatedgasLimit}`)
-    }).catch(error => {
-      console.log(`Error estmate: ${error}`)
-    })
     
-    console.log(`Attemping txn`)
     setAttemptingTxn(true)
     await estimate(...args, value ? { value } : {})
       .then(estimatedGasLimit => 
